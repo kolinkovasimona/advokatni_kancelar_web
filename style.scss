@@ -1,0 +1,54 @@
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*,
+:after,
+:before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+$primaryColor: #140442;
+$secondaryColor: #ffffff;
+$primaryFont: "Merriweather", serif;
+
+body {
+  background-color: $secondaryColor;
+  color: $primaryColor;
+  font-family: $primaryFont;
+  font-size: 18px;
+  line-height: 1.6;
+  section {
+    padding: 20px 5%;
+  }
+}
+
+.main_container{
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.title_photo {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-evenly;
+  background-color: $primaryColor;
+  color: $secondaryColor;
+  &__text{
+      align-self: center;
+  }
+}
+
+.contact{
+    background-color: $primaryColor;
+    color: $secondaryColor;
+}
+
+footer{
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+}
