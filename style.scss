@@ -1,54 +1,191 @@
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+$primaryColor: #282d40;
+$secondaryColor: #f5f5f5;
+$complementaryColor: #6eb3e5;
+$primaryFont: "Merriweather", serif;
+
 html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-*,
-:after,
-:before {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
-
-$primaryColor: #140442;
-$secondaryColor: #ffffff;
-$primaryFont: "Merriweather", serif;
 
 body {
   background-color: $secondaryColor;
   color: $primaryColor;
   font-family: $primaryFont;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
+  letter-spacing: 1.5;
   section {
     padding: 20px 5%;
   }
 }
 
-.main_container{
-  max-width: 1160px;
-  margin: 0 auto;
+/* HLAVICKA */
+.hlavicka {
+  padding: 2rem;
+  background-image: linear-gradient($primaryColor, #282d40e0), url(images/lady-justice-2388500_1920.jpg);
+  background-position: center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+
+.titulek {
+  font-family: $primaryFont;
+  font-size: 2.6rem;
+  color: $complementaryColor;
+  text-transform: uppercase
+}
+.citat {
+  font-size: 1.5rem;
+  font-style: italic;
+  opacity: 0.85;
+}
+.name {
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
 }
 
 .title_photo {
   display: flex;
-  flex-wrap: wrap-reverse;
   justify-content: space-evenly;
-  background-color: $primaryColor;
-  color: $secondaryColor;
+  flex-direction: column;
+  flex-wrap: wrap-reverse;
+  align-items: center;
   &__text{
-      align-self: center;
+    &--button{
+      width: 15rem;
+      font-size: 1rem;
+      font-family: $primaryFont;
+      font-weight: bold;
+      background-color:$complementaryColor;
+      border-radius: 5px;
+      padding:  0.5rem 0;
+      a{
+        text-decoration: none;
+        color: $primaryColor;
+      }
+    }
   }
 }
 
-.contact{
-    background-color: $primaryColor;
-    color: $secondaryColor;
+.horni_ohraniceni {
+  position: relative;
 }
 
-footer{
+.horni-ohraniceni::before {
+  content: "";
+  max-width: 3rem;
+  border-bottom: 1px solid white;
+  display: block;
+  margin: 0 auto 0.5rem;
+}
+
+/* MENU */
+.menu {
+  margin: 0;
+  padding: 2rem;
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.menu a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  font-size: 12px;
+  color: #a5a5a5;
+}
+
+.menu > li {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.menu a:hover {
+  color: black;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: $primaryFont;
+  font-size: 1.5rem;
+  padding-left: 2rem;
+}
+
+h2::after {
+  content: "";
+  width: 5rem;
+  display: block;
+  border-top: 3px solid $complementaryColor;
+  margin-top: 1rem;
+  transform: translateX(-2rem);
+}
+
+.text-obsah {
+  padding: 1rem 2rem;
+}
+
+.obsah {
+  background-color: $secondaryColor;
+  box-shadow: 0 5px 30px 5px #00000026;
+}
+
+/* KONTAKT*/
+.contact {
+  background-color: $primaryColor;
+  color: $secondaryColor;
+  &__title {
+    color: $complementaryColor;
+    letter-spacing: 0.1rem;
+  }
+}
+
+/* PATICKA */
+footer {
+  background-color: $primaryColor;
+  p {
+    color: $secondaryColor;
     text-align: center;
     font-size: 1rem;
-    margin-top: 0.3rem;
+    padding: 0.2rem;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .menu {
+    flex-direction: row;
+  }
+
+  .menu > * {
+    border-top: 1px solid #e5e5e5;
+    flex: 1;
+  }
+
+  .menu > *:not(:last-child) {
+    border-right: 1px solid #e5e5e5;
+  }
+  .title_photo {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .obsah {
+    max-width: 1000px;
+    margin: 0 auto;
+    transform: translateY(-4rem);
+  }
+
+  .hlavicka {
+    min-height: 380px;
+  }
 }

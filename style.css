@@ -1,3 +1,10 @@
+*,
+:after,
+:before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -5,59 +12,209 @@ html {
   padding: 0;
 }
 
-*,
-:after,
-:before {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  background-color: #ffffff;
-  color: #140442;
+  background-color: #f5f5f5;
+  color: #282d40;
   font-family: "Merriweather", serif;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
+  letter-spacing: 1.5;
 }
 
 body section {
   padding: 20px 5%;
 }
 
-.main_container {
-  max-width: 1160px;
-  margin: 0 auto;
+/* HLAVICKA */
+.hlavicka {
+  padding: 2rem;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#282d40), to(#282d40e0)), url(images/lady-justice-2388500_1920.jpg);
+  background-image: linear-gradient(#282d40, #282d40e0), url(images/lady-justice-2388500_1920.jpg);
+  background-position: center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+
+.titulek {
+  font-family: "Merriweather", serif;
+  font-size: 2.6rem;
+  color: #6eb3e5;
+  text-transform: uppercase;
+}
+
+.citat {
+  font-size: 1.5rem;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.name {
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
 }
 
 .title_photo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap-reverse;
-      flex-wrap: wrap-reverse;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  background-color: #140442;
-  color: #ffffff;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.title_photo__text {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+.title_photo__text--button {
+  width: 15rem;
+  font-size: 1rem;
+  font-family: "Merriweather", serif;
+  font-weight: bold;
+  background-color: #6eb3e5;
+  border-radius: 5px;
+  padding: 0.5rem 0;
 }
 
+.title_photo__text--button a {
+  text-decoration: none;
+  color: #282d40;
+}
+
+.horni_ohraniceni {
+  position: relative;
+}
+
+.horni-ohraniceni::before {
+  content: "";
+  max-width: 3rem;
+  border-bottom: 1px solid white;
+  display: block;
+  margin: 0 auto 0.5rem;
+}
+
+/* MENU */
+.menu {
+  margin: 0;
+  padding: 2rem;
+  list-style: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.menu a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  font-size: 12px;
+  color: #a5a5a5;
+}
+
+.menu > li {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.menu a:hover {
+  color: black;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: "Merriweather", serif;
+  font-size: 1.5rem;
+  padding-left: 2rem;
+}
+
+h2::after {
+  content: "";
+  width: 5rem;
+  display: block;
+  border-top: 3px solid #6eb3e5;
+  margin-top: 1rem;
+  -webkit-transform: translateX(-2rem);
+          transform: translateX(-2rem);
+}
+
+.text-obsah {
+  padding: 1rem 2rem;
+}
+
+.obsah {
+  background-color: #f5f5f5;
+  -webkit-box-shadow: 0 5px 30px 5px #00000026;
+          box-shadow: 0 5px 30px 5px #00000026;
+}
+
+/* KONTAKT*/
 .contact {
-  background-color: #140442;
-  color: #ffffff;
+  background-color: #282d40;
+  color: #f5f5f5;
 }
 
+.contact__title {
+  color: #6eb3e5;
+  letter-spacing: 0.1rem;
+}
+
+/* PATICKA */
 footer {
+  background-color: #282d40;
+}
+
+footer p {
+  color: #f5f5f5;
   text-align: center;
   font-size: 1rem;
-  margin-top: 0.3rem;
+  padding: 0.2rem;
+}
+
+@media screen and (min-width: 500px) {
+  .menu {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .menu > * {
+    border-top: 1px solid #e5e5e5;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .menu > *:not(:last-child) {
+    border-right: 1px solid #e5e5e5;
+  }
+  .title_photo {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .obsah {
+    max-width: 1000px;
+    margin: 0 auto;
+    -webkit-transform: translateY(-4rem);
+            transform: translateY(-4rem);
+  }
+  .hlavicka {
+    min-height: 380px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
