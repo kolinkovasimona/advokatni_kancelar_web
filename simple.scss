@@ -1,0 +1,20 @@
+﻿@import "_rnav.scss";
+
+$FgColor: #a6a6a6;
+$BgColor: #eee;
+$AccentColor: #2c65b0;
+$Padding: 1ex;
+
+nav {
+  @include rnav(
+    $Color: $BgColor,
+    $BackColor: $AccentColor,
+    $HoverColor: $FgColor,
+    $HoverBackColor: $AccentColor,
+    $Padding: $Padding
+  );
+}
+
+.icon_menu{
+  font-size: 2rem;
+}

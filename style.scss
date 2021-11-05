@@ -1,191 +1,107 @@
+$BgColor: #eee;
+$AccentColor: #2c65b0;
+$textcolor: #0c0c0c;
+$primaryFont: "Roboto", sans-serif;
+$Padding: 1ex;
+
 *,
 :after,
 :before {
   box-sizing: border-box;
 }
 
-$primaryColor: #282d40;
-$secondaryColor: #f5f5f5;
-$complementaryColor: #6eb3e5;
-$primaryFont: "Merriweather", serif;
-
 html {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  background-color: $secondaryColor;
-  color: $primaryColor;
+  background-color: $AccentColor;
+  color: $textcolor;
   font-family: $primaryFont;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.5;
   letter-spacing: 1.5;
-  section {
-    padding: 20px 5%;
-  }
+}
+
+section {
+  padding: 2rem;
+  background-color: $BgColor;
+  box-shadow: 0 5px 30px 5px #00000026;
+  border-radius: 10px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $primaryFont;
+  color: $textcolor;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: $BgColor;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
 }
 
 /* HLAVICKA */
 .hlavicka {
-  padding: 2rem;
-  background-image: linear-gradient($primaryColor, #282d40e0), url(images/lady-justice-2388500_1920.jpg);
-  background-position: center;
-  background-size: cover;
-  color: white;
+  padding: 1rem;
+  color: $BgColor;
   text-align: center;
-}
-
-.titulek {
-  font-family: $primaryFont;
-  font-size: 2.6rem;
-  color: $complementaryColor;
-  text-transform: uppercase
-}
-.citat {
-  font-size: 1.5rem;
-  font-style: italic;
-  opacity: 0.85;
-}
-.name {
-  font-size: 1.7rem;
-  margin-bottom: 2rem;
 }
 
 .title_photo {
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
-  flex-wrap: wrap-reverse;
   align-items: center;
-  &__text{
-    &--button{
-      width: 15rem;
-      font-size: 1rem;
-      font-family: $primaryFont;
-      font-weight: bold;
-      background-color:$complementaryColor;
-      border-radius: 5px;
-      padding:  0.5rem 0;
-      a{
-        text-decoration: none;
-        color: $primaryColor;
-      }
-    }
-  }
-}
-
-.horni_ohraniceni {
-  position: relative;
-}
-
-.horni-ohraniceni::before {
-  content: "";
-  max-width: 3rem;
-  border-bottom: 1px solid white;
-  display: block;
-  margin: 0 auto 0.5rem;
-}
-
-/* MENU */
-.menu {
-  margin: 0;
-  padding: 2rem;
-  list-style: none;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
-.menu a {
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: "Raleway", sans-serif;
-  font-size: 12px;
-  color: #a5a5a5;
-}
-
-.menu > li {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.menu a:hover {
-  color: black;
-  font-weight: bold;
 }
 
 h2 {
   font-family: $primaryFont;
   font-size: 1.5rem;
-  padding-left: 2rem;
-}
-
-h2::after {
-  content: "";
-  width: 5rem;
-  display: block;
-  border-top: 3px solid $complementaryColor;
-  margin-top: 1rem;
-  transform: translateX(-2rem);
-}
-
-.text-obsah {
-  padding: 1rem 2rem;
-}
-
-.obsah {
-  background-color: $secondaryColor;
-  box-shadow: 0 5px 30px 5px #00000026;
 }
 
 /* KONTAKT*/
 .contact {
-  background-color: $primaryColor;
-  color: $secondaryColor;
+  background-color: $BgColor;
+  color: $textcolor;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-top: 1rem;
   &__title {
-    color: $complementaryColor;
+    color: $AccentColor;
     letter-spacing: 0.1rem;
+    font-size: 1.3rem;
   }
 }
 
 /* PATICKA */
-footer {
-  background-color: $primaryColor;
-  p {
-    color: $secondaryColor;
-    text-align: center;
-    font-size: 1rem;
+footer p {
+  color: $BgColor;
+  text-align: center;
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 500px) {
+  .title_photo {
+    flex-direction: row;
+    flex-wrap: wrap;
+    float: right;
     padding: 0.2rem;
   }
 }
 
-@media screen and (min-width: 500px) {
-  .menu {
-    flex-direction: row;
-  }
-
-  .menu > * {
-    border-top: 1px solid #e5e5e5;
-    flex: 1;
-  }
-
-  .menu > *:not(:last-child) {
-    border-right: 1px solid #e5e5e5;
-  }
-  .title_photo {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-
 @media screen and (min-width: 1000px) {
-  .obsah {
-    max-width: 1000px;
+  main {
+    max-width: 1200px;
     margin: 0 auto;
-    transform: translateY(-4rem);
+    padding: 1rem 3%;
   }
-
-  .hlavicka {
-    min-height: 380px;
+  .contact {
+    max-width: 1200px;
+    margin: 1rem auto;
   }
 }
